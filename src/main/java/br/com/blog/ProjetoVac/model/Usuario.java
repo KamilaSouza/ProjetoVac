@@ -1,21 +1,20 @@
-package br.com.blog.ProjetoVac.modelo;
+package br.com.blog.ProjetoVac.model;
 
 import lombok.Data;
 import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.swing.*;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-@Table
 @Data
 public class Usuario {
 
+        @Id
         private Long id;
-        private Spring nome;
-        private Spring email;
-        private Spring cpf;
-        private Spring senha;
+        private String nome;
+        private String email;
+        private String cpf;
+        private String senha;
         private Date datanascimento;
 
 }
