@@ -19,7 +19,7 @@ public class ControllerUsuario {
     @Autowired
     RepositoryUsuario repoUsuario;
 
-    @PostMapping(consumes = "aplication/json")
+    @PostMapping(consumes = "application/json")
     public ResponseEntity<?> adicionaUsuario(@RequestBody Usuario usuario) {
         Usuario usuarioSalvo = repoUsuario.save(usuario);
 

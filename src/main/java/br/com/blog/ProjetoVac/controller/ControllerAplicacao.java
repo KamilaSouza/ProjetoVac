@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import java.net.URI;
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class ControllerAplicacao {
     @Autowired
     RepositoryAplicacao repoAplica;
 
-    @PostMapping(consumes = "aplication/json")
+    @PostMapping(consumes = "application/json")
     public ResponseEntity<?> adicionaAplicacao(@RequestBody Aplicacao aplicacao) {
         Aplicacao aplicacaoSalvo = repoAplica.save(aplicacao);
 
