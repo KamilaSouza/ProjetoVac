@@ -1,7 +1,7 @@
 package br.com.blog.ProjetoVac.controller;
 
 import br.com.blog.ProjetoVac.model.Aplicacao;
-import br.com.blog.ProjetoVac.repository.RepositoryAplicacao;
+import br.com.blog.ProjetoVac.repository.AplicacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ import java.util.List;
 public class ControllerAplicacao {
 
     @Autowired
-    RepositoryAplicacao repoAplica;
+    AplicacaoRepository repoAplica;
 
     @PostMapping(consumes = "application/json")
     public ResponseEntity<?> adicionaAplicacao(@RequestBody Aplicacao aplicacao) {

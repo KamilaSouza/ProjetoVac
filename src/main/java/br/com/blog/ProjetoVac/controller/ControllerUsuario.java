@@ -1,13 +1,16 @@
 package br.com.blog.ProjetoVac.controller;
 
 
+import br.com.blog.ProjetoVac.controller.dto.UsuarioDto;
+import br.com.blog.ProjetoVac.controller.form.UsuarioForm;
 import br.com.blog.ProjetoVac.model.Usuario;
-import br.com.blog.ProjetoVac.repository.RepositoryUsuario;
+import br.com.blog.ProjetoVac.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -17,16 +20,20 @@ import java.util.List;
 public class ControllerUsuario {
 
     @Autowired
-    RepositoryUsuario repoUsuario;
+    private UsuarioRepository repoUsuario;
 
     @PostMapping(consumes = "application/json")
-    public ResponseEntity<?> adicionaUsuario(@RequestBody Usuario usuario) {
-        Usuario usuarioSalvo = repoUsuario.save(usuario);
+    public ResponseEntity<UsuarioDto> adicionaUsuario(@RequestBody @Valid UsuarioForm usuarioForm, UriComponentsBuilder uriBuilder) {
+        Usuario usuario = new Usuario();
+        usuario.setCpf(usuarioForm.getCpf());
+        usuario.setEmail(usuarioForm.getEmail());
+        usuario.setNome(usuarioForm.getNome());
+        usuario.setDataNascimento(usuarioForm.getDataNascimento());
+        repoUsuario.save(usuario);
 
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().replacePath("/usuarios").path("/{id}")
-                .buildAndExpand(usuarioSalvo.getId()).toUri();
+        URI uri = uriBuilder.path("/usuarios/{id}").buildAndExpand(usuario.getId()).toUri();
 
-                return ResponseEntity.created(uri).build();
+        return ResponseEntity.created(uri).body(new UsuarioDto(usuario));
 
     }
 
