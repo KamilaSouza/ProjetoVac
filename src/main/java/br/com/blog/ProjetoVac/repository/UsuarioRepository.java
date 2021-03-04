@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RepositoryUsuario extends JpaRepository<Usuario, Long> {
+    Usuario findByCpf(String cpf);
 }
