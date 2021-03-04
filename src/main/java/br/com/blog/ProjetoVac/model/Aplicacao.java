@@ -10,18 +10,19 @@ public class Aplicacao {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String email;
-
-    private String nomevacina;
+    @ManyToOne
+    private Vacina vacina;
 
     private String datavacina;
+
+    private String email;
 
     @ManyToOne
     private Usuario usuario;
 
-    public Aplicacao(String email, String nomevacina, String datavacina) { }
+    public Aplicacao( String nomevacina, String datavacina, String email) { }
 
-    public Aplicacao() { }
+    public Aplicacao() {}
 
 }
 

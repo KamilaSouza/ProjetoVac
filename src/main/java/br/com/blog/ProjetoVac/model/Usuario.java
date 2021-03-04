@@ -2,7 +2,7 @@ package br.com.blog.ProjetoVac.model;
 
 import lombok.Data;
 import javax.persistence.*;
-
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Data
@@ -16,7 +16,7 @@ public class Usuario {
         @Column (name = "email", unique = true)
         private String email;
 
-        @Column (name = "cpf", unique = true)
+        @Column(name = "cpf", unique = true)
         private String cpf;
 
         @Column(name="datanascimento")
