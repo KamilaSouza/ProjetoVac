@@ -3,7 +3,6 @@ package br.com.blog.ProjetoVac.controller;
 import br.com.blog.ProjetoVac.controller.dto.AplicacaoDto;
 import br.com.blog.ProjetoVac.controller.form.AplicacaoForm;
 import br.com.blog.ProjetoVac.model.Aplicacao;
-import br.com.blog.ProjetoVac.model.Vacina;
 import br.com.blog.ProjetoVac.repository.AplicacaoRepository;
 import br.com.blog.ProjetoVac.repository.UsuarioRepository;
 import br.com.blog.ProjetoVac.repository.VacinaRepository;
