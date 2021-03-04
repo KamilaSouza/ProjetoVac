@@ -8,7 +8,7 @@ public class AplicacaoDto {
     private String email;
     private String nomevacina;
     private String datavacina;
-    //private String cpf;
+    private String cpf;
     private UsuarioDto usuarioDto;
 
     public AplicacaoDto(Aplicacao aplicacao){
@@ -51,11 +51,11 @@ public class AplicacaoDto {
         this.datavacina = datavacina;
     }
 
-//    public String getCpf() {
-//        return cpf;
-//    }
-//
-//    public void setCpf(String cpf) {
-//        this.cpf = cpf;
-//    }
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 }
