@@ -2,7 +2,6 @@ package br.com.blog.ProjetoVac.model;
 
 import lombok.Data;
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Data

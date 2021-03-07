@@ -11,14 +11,12 @@ public class AplicacaoDto {
     private Long id;
     private Vacina nomevacina;
     private String datavacina;
-    private String email;
     private Usuario usuario;
 
     public AplicacaoDto(Aplicacao aplicacao){
         this.id = aplicacao.getId();
         this.nomevacina = aplicacao.getVacina();
         this.datavacina = aplicacao.getDatavacina();
-        this.email = aplicacao.getEmail();
         this.usuario = aplicacao.getUsuario();
     }
 

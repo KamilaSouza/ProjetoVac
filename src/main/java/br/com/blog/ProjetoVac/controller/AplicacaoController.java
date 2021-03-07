@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/aplicacao")
 
-public class ControllerAplicacao {
+public class AplicacaoController {
 
     @Autowired
     private AplicacaoRepository aplicacaoRepository;
@@ -36,13 +36,13 @@ public class ControllerAplicacao {
         aplicacaoForm.converterVacina(vacinaRepository);
         aplicacao.setVacina(vacinaRepository.findByNome(aplicacaoForm.getNomevacina()));
         aplicacao.setDatavacina(aplicacaoForm.getDatavacina());
-        aplicacao.setEmail(aplicacaoForm.getEmail());
         aplicacao.setUsuario(usuarioRepository.findByEmail(aplicacaoForm.getEmail()));
         aplicacaoRepository.save(aplicacao);
 
         URI uri = uriBuilder.path("/aplicacao/{id}").buildAndExpand(aplicacao.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new AplicacaoDto(aplicacao));
+
 
     }
 

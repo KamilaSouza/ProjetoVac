@@ -17,10 +17,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/usuarios")
 
-public class ControllerUsuario {
+public class UsuarioController {
 
     @Autowired
-    private UsuarioRepository repoUsuario;
+    private UsuarioRepository usuarioRepository;
 
     @PostMapping(consumes = "application/json")
     public ResponseEntity<UsuarioDto> adicionaUsuario(@RequestBody @Valid UsuarioForm usuarioForm, UriComponentsBuilder uriBuilder) {
@@ -29,22 +29,21 @@ public class ControllerUsuario {
         usuario.setEmail(usuarioForm.getEmail());
         usuario.setNome(usuarioForm.getNome());
         usuario.setDataNascimento(usuarioForm.getDataNascimento());
-        repoUsuario.save(usuario);
+        usuarioRepository.save(usuario);
 
         URI uri = uriBuilder.path("/usuarios/{id}").buildAndExpand(usuario.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new UsuarioDto(usuario));
-
     }
 
     @GetMapping
     public ResponseEntity<List<Usuario>> listaUsuarios() {
-        return ResponseEntity.ok().body(repoUsuario.findAll());
+        return ResponseEntity.ok().body(usuarioRepository.findAll());
 
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> buscaPorId(@PathVariable Long id) {
-        return ResponseEntity.ok().body(repoUsuario.findById(id).get());
+        return ResponseEntity.ok().body(usuarioRepository.findById(id).get());
     }
 }
