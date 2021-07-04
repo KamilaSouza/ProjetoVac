@@ -12,6 +12,9 @@ public class UsuarioDto {
     private String cpf;
     private String dataNascimento;
 
+    // De onde ele vai tirar os dados - constructor
+    // this.id recebe ...
+
     public UsuarioDto(Usuario usuario) {
         this.id = usuario.getId();
         this.nome = usuario.getNome();

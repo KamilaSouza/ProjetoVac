@@ -31,9 +31,6 @@ public class ErrodeValidacao400 {
             dto.add(erro);
         });
         return dto;
-
     }
-
-
 }
 

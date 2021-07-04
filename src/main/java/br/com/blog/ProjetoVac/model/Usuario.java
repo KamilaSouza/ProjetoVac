@@ -12,7 +12,7 @@ public class Usuario {
 
         private String nome;
 
-        @Column (name = "email", unique = true)
+        @Column (name = "email", unique = true  )
         private String email;
 
         @Column(name = "cpf", unique = true)

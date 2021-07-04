@@ -6,3 +6,4 @@ INSERT INTO USUARIO(nome, email, cpf, datanascimento) VALUES ('Teste01', 'teste0
 INSERT INTO USUARIO(nome, email, cpf, datanascimento) VALUES ('Teste02', 'teste02@teste02.com','03758111099', '01/01/2000');
 
 INSERT INTO APLICACAO(vacina_id, datavacina, usuario_id) VALUES(1, '01/03/2021', 1);
+INSERT INTO APLICACAO(vacina_id, datavacina, usuario_id) VALUES(2, '01/03/2021', 1);

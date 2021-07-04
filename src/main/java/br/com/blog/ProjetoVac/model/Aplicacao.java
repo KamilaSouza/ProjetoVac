@@ -10,13 +10,13 @@ public class Aplicacao {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //o usuario pode receber  varias vacinas
+    //varias aplicaçoes por vacina
     @ManyToOne
     private Vacina vacina;
 
     private String datavacina;
 
-    //o usuario pode receber varias aplicações
+    //varias aplicaçoes por usuario
     @ManyToOne
     private Usuario usuario;
 

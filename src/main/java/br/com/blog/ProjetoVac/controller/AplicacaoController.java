@@ -35,14 +35,13 @@ public class AplicacaoController {
         Aplicacao aplicacao = aplicacaoForm.converterUsuario(usuarioRepository);
         aplicacaoForm.converterVacina(vacinaRepository);
         aplicacao.setVacina(vacinaRepository.findByNome(aplicacaoForm.getNomevacina()));
-        aplicacao.setDatavacina(aplicacaoForm.getDatavacina());
         aplicacao.setUsuario(usuarioRepository.findByEmail(aplicacaoForm.getEmail()));
+        aplicacao.setDatavacina(aplicacaoForm.getDatavacina());
         aplicacaoRepository.save(aplicacao);
 
         URI uri = uriBuilder.path("/aplicacao/{id}").buildAndExpand(aplicacao.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new AplicacaoDto(aplicacao));
-
 
     }
 

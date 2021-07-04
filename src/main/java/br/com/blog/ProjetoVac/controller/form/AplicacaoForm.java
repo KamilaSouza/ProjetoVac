@@ -13,13 +13,13 @@ import javax.validation.constraints.NotBlank;
 public class AplicacaoForm {
 
 
-    @NotBlank(message = "O nome da vacina é obrigatório")
+    @NotBlank
     private String nomevacina;
 
-    @NotBlank(message = "A data da aplicação da vacina é obrigatório: dd/mm/aaaa")
+    @NotBlank
     private String datavacina;
 
-    @NotBlank(message = "O email é obrigatório")
+    @NotBlank
     private String email;
 
 
