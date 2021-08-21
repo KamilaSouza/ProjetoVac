@@ -1,3 +1,3 @@
 ## Projeto Spring Boot Cadastro de Vacinas
 
-- #### Desafio Orange Talents
+- #### API REST desenvolvida para o Desafio Orange Talents da Zup
